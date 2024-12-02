@@ -8,7 +8,37 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <p class="help">TESTING HELP</p>
+  <p class="help">Demo</p>
+
+  <h1>Add Single Quotes to Each Line</h1>
+
+    <textarea id="inputText" rows="10" cols="30" placeholder="Enter text here, separated by new lines"></textarea><br><br>
+
+    <button onclick="processInput()">Process</button>
+
+    <h2>Output:</h2>
+    <pre id="outputText"></pre>
+
+    <script>
+        // Function to process the input text
+        function addQuotesToInput(input) {
+            // Split the input by new lines
+            const lines = input.split('\n');
+            
+            // Add single quotes to both ends of each line
+            const processedLines = lines.map(line => `'${line},'`);
+            
+            // Join the lines back together with new lines
+            return processedLines.join('\n');
+        }
+
+        // Function to handle button click and show result
+        function processInput() {
+            const inputText = document.getElementById('inputText').value;
+            const result = addQuotesToInput(inputText);
+            document.getElementById('outputText').textContent = result;
+        }
+    </script>
   <!-- <app-root></app-root> -->
 </body>
 </html>
