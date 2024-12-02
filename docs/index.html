@@ -3,12 +3,42 @@
 <head>
   <meta charset="utf-8">
   <title>EamDemo</title>
-  <base href="/eam_demo/">
+  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles-5INURTSO.css"></head>
 <body>
-  <p class="help">TESTING HELP</p>
+  <p class="help">Demo</p>
+
+  <h1>Add Single Quotes to Each Line</h1>
+
+    <textarea id="inputText" rows="10" cols="30" placeholder="Enter text here, separated by new lines"></textarea><br><br>
+
+    <button onclick="processInput()">Process</button>
+
+    <h2>Output:</h2>
+    <pre id="outputText"></pre>
+
+    <script>
+        // Function to process the input text
+        function addQuotesToInput(input) {
+            // Split the input by new lines
+            const lines = input.split('\n');
+            
+            // Add single quotes to both ends of each line
+            const processedLines = lines.map(line => `'${line},'`);
+            
+            // Join the lines back together with new lines
+            return processedLines.join('\n');
+        }
+
+        // Function to handle button click and show result
+        function processInput() {
+            const inputText = document.getElementById('inputText').value;
+            const result = addQuotesToInput(inputText);
+            document.getElementById('outputText').textContent = result;
+        }
+    </script>
   <!-- <app-root></app-root> -->
 <script src="polyfills-FFHMD2TL.js" type="module"></script><script src="main-C2MSR3K7.js" type="module"></script></body>
 </html>
